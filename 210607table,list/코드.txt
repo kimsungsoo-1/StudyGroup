@@ -1,0 +1,3 @@
+border-collapse : 중복되는 선을 제거해줌
+table border="n" : 테두리굵기 조절
+caption : 테이블 제목 붙일때 사용
