@@ -1,0 +1,66 @@
+홈페이지 제작하는 것은 건축물을 생각하면 이해가 쉽다.
+먼저 토지를 다듬고 건축물을 올릴 장소를 마련한 후, 건축물의 뼈대를 만들고, 전기의 배선 및 수도공사와 인테리어를 끝낸후 건축을 마무리
+그중 뼈대를 만드는 부분이 홈페이지 제작에 있어서 마크업이라고 부른다.
+# 폼양식을 만들어주면 가시성이 좋아진다.
+
+마크업의 대표적 해당 요소는
+1. 홈페이지를 구성하는 레이아웃 마크업.(html+css)
+2. 영역을 구분 짓는 블록,인라인 마크업(html+css)
+3. 표와 폼 양식을 만드는 테이블, 폼 마크업,(html)
+4. 글을 게시하는 텍스트 마크업, (html)
+<from> : 사용자의 입력사항을 받는 칸을 만들어주는것을 통합적으로 폼 양식이라고 한다.
+	폼 양식은 크게 
+	- 텍스트 필드 input type="text" name="n" -여기서 네임은 서버에 전달될 떄의 이름 설정
+	- 라디오 박스 input type="radio" name="n" checked - 단일선택 
+	- 체크 박스 input type="checkbox" value="n" - 다중선택
+	- 필드 박스
+	- 리스트 박스 
+	- 전송 버튼 input type="submit" value="" 이때 전송을 눌러도 반응이 없다. 우리는 프론트(웹퍼블리싱)작업만 한 것으로, 사용자가 보고 입력할 수 있는 버튼적인 목업 형태만 만든 것이다.
+					    동작하는 뒷편 전선의 역할은 백엔드(개발자)들이 php이외의 기타 언어로 만들어 전송하는 방식이다.
+					    from action="/action_page.php, /form
+	- 등등.
+	# name과 value 차이 name 은 서버에 전송되기 위해 꼭 필요한 값(필수)
+			   value 는 폼필드에 기본적으로 입력을 해 주는 값(필수&선택)
+			   즉, name과 value는 항상 같이 다니는 것을 기본으로 하지만 체크박스가 아닌 텍스트박스는 예외
+먼저 표,테이블을 만들때 처럼 <table></table>을 선언해 주는것 과 똑같이 <from></from>을 선언해 주어야 폼 양식을 만들 수 있다.
+<fieldset> 해당영역으로 구분을 짓게 할수있는 기능
+<label> : 라벨태그는 사용자 인터페이스(UI) 요소의 라벨을 정의할 때 사용,
+	for 속성을 사용하여 다른 요소와 결합할 수 있으며, 이때 for 속성값은 결합하고자 하는 요소의 id 속성값과 같아야 한다.
+	label 요소를 결합하고자 하는 요소 내부에 위치시키면 for 속성을 사용하지 않더라도 해당 요소와 결합시킬 수 있다.
+	<label>요소
+	- input 
+	- button
+	- textarea
+	- select
+	- meter
+	- output
+	- progress
+	# 사용자가 마우스로 해당<label>텍스트를 클릭할 경우<label>요소와 연결된 요소를 곧바로 선택할 수 있어 사용자의 편의성을 높일 수 있다.
+
+<input type__> : 인풋 요소는 폼 태그 안에 속한 종속적 요소로 다양한 폼 양식을 만들 수 있도록 도와주는 기능
+	        사용방법은 여느 태그와 똑같이 input을 적어주고 필요한 기능을 style처럼 적어주면 됩니다.
+<legend>
+<input type>
+<textarea> : textarea name="n" clos(가로)="n" rows(세로)="n">
+<button>
+<radio>
+<checkbox>
+input type="checkbox" name="n" value="Bike"
+<select>~<option~selected> - 드롭다운 선택지
+			  - select name="n"요소 옆에 multiple 이라는 태그를 적어주면 ctrl 키를 이용해 다중선택을 하고 제출할수 있다.
+			  - select name="n" size="n" 보기를 3개로 제한해 보여준다.
+			<select name="color" size="3" multiple>
+			<option value="red">빨강</option>
+			<option value="blue">파랑</option>
+
+<placeholder, checked, rows, cols> - placeholder="n" : "__" 어떤 항목을 써야할지 짐작하게 만들어주는 힌트기능
+			         - required : 항목을 채우지 않으면 제출되지 않음
+			         - autofocus : 화면을 열때 폼의 원하는 요소에 마우스 커서가 자동적으로 표시 되는 기능
+
+# 자주사용하는 태그 목록
+input type="password" : 필드영역에 글을 쓸때 패스워드 형식으로 저장해준다.
+input type="reset" : 기입한 양식을 초기화 시켜주는 버튼을 만들어 준다.
+input type="button" : 버튼을 만든다.
+input type="email" : 이메일을 쓸 수 있는 칸을 만들어준다. 일부 스마트폰은 뒤에 .com 을 붙여준다.
+input type="file" : 파일을 첨부하는 버튼을 만든다.
+autocomplete="on" : 자동입력 완성 양식
